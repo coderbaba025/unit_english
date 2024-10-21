@@ -5,12 +5,14 @@ const body = document.body;
 if (body.classList.contains('dark-mode')) {
     themeToggle.classList.add('fa-sun'); // Show sun icon for dark mode
 } else {
+    body.classList.add('light-mode'); // Default to light mode
     themeToggle.classList.add('fa-moon'); // Show moon icon for light mode
 }
 
 themeToggle.addEventListener('click', () => {
-    body.classList.toggle('dark-mode'); // Toggle dark mode
-    body.classList.toggle('light-mode'); // Toggle light mode
+    // Toggle dark mode
+    body.classList.toggle('dark-mode');
+    body.classList.toggle('light-mode');
 
     // Update the icon based on the current mode
     if (body.classList.contains('dark-mode')) {
