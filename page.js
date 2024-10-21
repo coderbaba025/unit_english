@@ -1,7 +1,19 @@
 const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+// Set initial theme based on the current class
+if (body.classList.contains('dark-mode')) {
+    themeToggle.classList.add('fa-sun'); // Show sun icon for dark mode
+} else {
+    themeToggle.classList.add('fa-moon'); // Show moon icon for light mode
+}
+
 themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('light-mode');
-    if (document.body.classList.contains('light-mode')) {
+    body.classList.toggle('dark-mode'); // Toggle dark mode
+    body.classList.toggle('light-mode'); // Toggle light mode
+
+    // Update the icon based on the current mode
+    if (body.classList.contains('dark-mode')) {
         themeToggle.classList.remove('fa-moon');
         themeToggle.classList.add('fa-sun');
     } else {
